@@ -1,13 +1,16 @@
-/** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin';
+
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
+    plugin(function ({ addUtilities }) {
+      // Add custom utilities here
+    }),
   ],
-}
+};
